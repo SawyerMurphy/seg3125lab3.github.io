@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<!--Code from this file is a mixture of work from Caroline B. and Sawyer M.-->
+
+<html>
+<head>
+    <link href = "styles.css" rel = "stylesheet" type = "text/css">
+</head>
+
+<title>SEG 3125 Lab 3</title>
+
+<body>
+
+    <div class = "sideTabs">
+        <a href = "#" onclick = "openInfo(event, 'Home')" id = "defaultOpen">Soy's Store</a>
+        <a href = "#" onclick = "openInfo(event, 'Client')">Client</a>
+        <a href = "#" onclick = "openInfo(event, 'Products')">Products</a>
+        <a href = "#" onclick = "openInfo(event, 'Cart')">Cart</a>
+    </div>
+    
+    <div id = "Home" class = "tabcontent">
+        <br>
+        <div class = "homePageText">
+            Welcome to Soy's Store! This website has been created with the idea to aid people who are colourblind, lactose intolerant, allergic to nuts, and prefer organic items.
+        </div>
+    </div>
+
+    <div id = "Client" class = "tabcontent">
+        <h3>Client Information</h3>
+          Please select all categories applicable to you: <br>
+          <input type = "checkbox" id = "selNutAllergy" option value = "NutAllergy" onclick = "populateListProductChoices(this.id, 'displayProduct')">Allergic to Nuts</option> <br>
+          <input type = "checkbox" id = "selLactoseInt" option value = "LactoseInt" onclick = "populateListProductChoices(this.id, 'displayProduct')">Lactose Intolerant</option> <br>
+          <input type = "checkbox" id = "selOrganic" option value= "Organic" onclick = "populateListProductChoices(this.id, 'displayProduct')">Prefer Organic Items</option> <br>
+      </div>
+
+      <div id = "Products" class = "tabcontent">
+        <h3>Your Targeted Products</h3>
+        <p>According to what you've selected in the "Client" section, below are the products that are safe for you to purchase.</p>
+           Please select items to purchase:
+           <div id = "displayProduct"></div>
+           <br>
+           <button id = "addCart" type = "button" class = "block" onclick = "selectedItems()">
+              Add selected items to cart.
+          </button>
+      </div>
+
+      <div id = "Cart" class = "tabcontent">
+        <h3>Cart</h3>
+        <p>Here is your cart.</p>
+        <div id = "displayCart"></div>
+      </div>
+      <br>
+      
+      <script src = "groceries.js"></script>
+      <script src = "main.js"></script>
+      
+      <footer class = "footer">This website was designed by Soy </footer>
+
+</body>
+</html>
